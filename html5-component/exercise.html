@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>exercise</title>
+</head>
+<body>
+  <div id="app">
+    <count @m="minclick" @p="pluclick"></count>
+  </div>
+  <template id="count">
+    <div>
+      <h2>counter:{{count}}</h2><br>
+      <button @click="plus(count)">+</button>
+      &nbsp;&nbsp;
+      <button @click="minus(count)">-</button>
+    </div>
+  </template>
+  <script src="../js/vue.js"></script>
+  <script src="../js/component/exercise.js"></script>
+</body>
+</html>

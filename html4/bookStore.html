@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>books</title>
+  <script src="../js/vue.js"></script>
+  <link rel="stylesheet" href="../css2/books.css">
+</head>
+<body>
+  <div id="store">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>name</th>
+          <th>date</th>
+          <th>price</th>
+          <th>number</th>
+          <th>operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(book,index) in books">
+          <td>{{book.id}}</td>
+          <td>{{"《"+book.name+"》"}}</td>
+          <td>{{book.date}}</td>
+<!--          <td>{{"$"+book.price.toFixed(2)}}</td>-->
+          <td>{{book.price | showPrice}}</td>
+          <td>
+            <button @click="minus(index)" :disabled="book.number<=1">-</button>
+              {{book.number}}
+            <button @click="plus(index)">+</button>
+          </td>
+          <td><button @click="remove(index)">remove</button>&nbsp;<button>update</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div v-if="books.length">
+      <b>{{FullPrice | showPrice}}</b>
+    </div>
+    <div v-else>
+      <b>null</b>
+    </div>
+  </div>
+  <script src="../js/book.js"></script>
+</body>
+</html>

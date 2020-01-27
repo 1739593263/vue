@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>bind</title>
+  <script src="../js/vue.js"></script>
+</head>
+<style>
+  .RED{
+    color:red;
+  }
+  .ALIGN{
+    text-align: center;
+  }
+  .BLUE{
+    color:blue;
+  }
+</style>
+<body>
+  <div id="bind">
+    <a v-bind:href="baidu">百度</a>
+    <img v-bind:src="b" alt="just a picture">
+    <br>
+    <hr>
+    <a :href="baidu">百度NO_bind</a>
+    <img :src="b" alt="just a picture">
+<!--  for bind class  -->
+    <h2 v-bind:class="{ RED:isRed, ALIGN:isEm, BLUE:isBlue }">{{message}}</h2><br><br>
+    <button v-on:click="changC">changecolor</button>
+    <!--  another binding way  -->
+    <h2 v-bind:class="getClasses()">{{message}}</h2><br><br>
+
+<!--  for bind style  -->
+    <h2 v-bind:style="{ fontSize:size+'px', color: color }">{{message}}</h2><br><br>
+    <!--  another binding way  -->
+    <h2 :style="{ fontSize:size+'px', color:color }">{{message}}</h2><br><br>
+    <!--  list bind -->
+    <h2 :style="[ sizeL, colorL ]">{{message}}</h2><br><br>
+
+    <script src="../js/initiate.js"></script>
+  </div>
+</body>
+</html>

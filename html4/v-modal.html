@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>nodal</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="message"/>
+    <b>{{message}}</b>
+    <br><br>
+    <input type="text" :value="value" @input="value = $event.target.value"/>
+    <b>{{value}}</b>
+    <br><br>
+<!--  radios  -->
+    <label for="male">
+      <input type="radio" name="gender" id="male" value="male" v-model="gender"/>
+      male
+    </label>
+    <label for="female">
+      <input type="radio" name="gender" id="female" value="female" v-model="gender"/>
+      female
+    </label>
+    <h3>gender is: {{gender}}</h3>
+    <br>
+<!--  checkbox  -->
+    <!--  1. one  -->
+    <label for="deal">
+      <input type="checkbox" id="deal" name="deal" v-model="isAgree"/>agree deal
+    </label><br>
+    <button :disabled="!isAgree">Next</button>
+    <br><br>
+    <!--  2.multiple  -->
+    <label for="soccer">
+      <input type="checkbox" id="soccer" value="soccer" v-model="is"/>soccer
+    </label>
+    <label for="basketball">
+      <input type="checkbox" id="basketball" value="basketball" v-model="is"/>basketball
+    </label>
+    <label for="baseball">
+      <input type="checkbox" id="baseball" value="baseball" v-model="is"/>baseball
+    </label>
+    <label for="tennis">
+      <input type="checkbox" id="tennis" value="tennis" v-model="is"/>tennis
+    </label>
+    <br>
+    chosen:{{is}}
+    <br>
+    <!--  2.1 band with js  -->
+    <label :for="item" v-for="item in ist">
+      <input type="checkbox" :id="item" :name="item" :value="item" v-model="is"/>{{item}}
+    </label>
+    <br><br>
+<!--  selection  -->
+    <!--  1. one  -->
+    <select name="#" v-model="fruit">
+      <option value="grape">grape</option>
+      <option value="apple">apple</option>
+      <option value="banana">banana</option>
+      <option value="pineapple">pineapple</option>
+    </select>
+    <br>
+    <b>{{fruit}}</b>
+    <br>
+    <!--  2.multiple  -->
+    <select name="#" v-model="fruits" multiple>
+      <option value="grape">grape</option>
+      <option value="apple">apple</option>
+      <option value="banana">banana</option>
+      <option value="pineapple">pineapple</option>
+    </select>
+    <br>
+    <b>{{fruits}}</b>
+  </div>
+  <script src="../js/model.js"></script>
+</body>
+</html>

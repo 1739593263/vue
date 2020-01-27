@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FtStF</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<!--  <div id="Fa">-->
+<!--    <cpn :number="num1"-->
+<!--        @numtofa="numm"></cpn>-->
+<!--  </div>-->
+
+<!--  <template id="son">-->
+<!--    <div>-->
+<!--      <h2>props:{{number}}</h2>-->
+<!--      <h2>data:{{dnumber}}</h2>-->
+<!--      <input type="text" :value="dnumber" @input="numInput"/>-->
+<!--    </div>-->
+<!--  </template>-->
+
+  <div id="father">
+    <cpn :snumber="num" @tofathernum="receivenum"></cpn>
+  </div>
+  <template id="son">
+    <div>
+      <h1>prop:{{snumber}}</h1>
+      <h1>data:{{dnumber}}</h1>
+      <input type="text" :value="dnumber" @input="numInput"/>
+    </div>
+  </template>
+
+  <script src="../js/component/exercise1.js"></script>
+</body>
+</html>

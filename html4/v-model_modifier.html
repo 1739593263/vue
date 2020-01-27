@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>modifier</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="app1">
+    <!--1.lazy : show after press enter-->
+    <input type="text" v-model.lazy="lazy"><br>
+    <b>{{lazy}}</b>
+
+    <br>
+    <!-- 2.number : change the number type of mustache index -->
+    <input type="text" v-model.number="number"><br>
+    <b>{{number}}-{{typeof number}}</b>
+
+    <br>
+    <!-- 3.trim : drop the blank aside the text -->
+    <input type="text" v-model.trim="trim"><br>
+    <b>{{trim}}</b>
+  </div>
+
+  <script src="../js/model.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StoF</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}</p>
+    <cpn @btnclick="cpnClick"></cpn>
+  </div>
+  <template id="sf">
+    <div>
+      <button v-for="item in categories" @click="ibutton(item)">{{item.name}}</button>
+      <br>
+    </div>
+  </template>
+  <script src="../js/vue.js"></script>
+  <script src="../js/component/STF.js"></script>
+</body>
+</html>

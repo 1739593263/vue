@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>If_Else</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-if="point>=90">A</p>
+    <p v-else-if="point>=80">B</p>
+    <p v-else-if="point>=70">C</p>
+    <p v-else>D</p>
+
+    <b v-if="isShow">ifShow</b>
+    <b v-else>elseShow</b>
+  </div>
+<!--   <input type="text" id="username" placeholder="input username" key="user"/>
+        the key was used to avoid input remains contest after click change through
+        the program contract key value in "dom"
+-->
+  <div id="example">
+    <div v-if="user">
+      <label for="username"><b>USER</b></label>
+      <input type="text" id="username" placeholder="input username" key="user"/>
+    </div>
+    <div v-else>
+      <label for="email"><b>EMAIL</b></label>
+      <input type="text" id="email" placeholder="input email" key="email"/>
+    </div>
+    <button @click="change">CHANGE</button>
+  </div>
+
+  <script src="../js/ifelse.js"></script>
+</body>
+</html>

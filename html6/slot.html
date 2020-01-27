@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<head>
+  <meta charset="UTF-8">
+  <title>slot</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="slot">
+    <cpn><input type="text" placeholder="Search..."/></cpn>
+    <br>
+    <cpn></cpn>
+    <br>
+    <cpn><h1>navigation template</h1></cpn>
+    <br>
+    <cpn>
+      <div>
+        <input type="text" placeholder="Search..."/>
+        <h1>navigation template</h1>
+      </div>
+    </cpn>
+    <br>
+
+<!--    <scpn><span slot="center">change</span></scpn>-->
+    <scpn><span>change</span></scpn>
+
+    <br>
+    <dcpn></dcpn>
+    <!-- v-slot used to receive props from son component  -->
+    <dcpn v-slot:item="languages">
+      <ol>
+        <li v-for="item in languages">{{item}}</li>
+      </ol>
+    </dcpn>
+    <dcpn></dcpn>
+  </div>
+  <template id="navi">
+    <div>
+      <a href="#" style="text-decoration: none">&laquo;</a>
+      &nbsp;&nbsp;&nbsp;
+      <slot><button>Just button</button></slot>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#" style="text-decoration: none">...</a>
+    </div>
+  </template>
+  <template id="multisolt">
+    <div>
+      <slot name="left"><span>left</span></slot>
+      <slot name="center"><span>center</span></slot>
+      <slot name="right"><span>right</span></slot>
+      <slot><span>???</span></slot>
+    </div>
+  </template>
+  <template id="domain">
+    <div>
+        <ol>
+          <li v-for="item in languages">{{item}}</li>
+        </ol>
+    </div>
+  </template>
+  <script src="../js/component/slot.js"></script>
+</body>
+</html>

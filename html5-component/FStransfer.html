@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FTS</title>
+</head>
+<body>
+  <div id="app">
+    <cpn :tmovies="movies" :tmessage="message"></cpn>
+  </div>
+  <template id="fts">
+    <div>
+      <p>{{tmovies}}</p>
+      <h2>{{tmessage}}</h2>
+      <ol>
+        <li v-for="item in tmovies">{{item}}</li>
+      </ol>
+    </div>
+  </template>
+
+  <!-- camel indict -->
+  <div id="camel">
+    <cp :cff="ff" :cmm="mm"></cp>
+  </div>
+  <template id="cpnCam">
+    <div>
+      <p>{{cff}}</p>
+      <h2>{{cmm}}</h2>
+      <ol>
+        <li v-for="item in cff">{{item}}</li>
+      </ol>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script src="../js/component/FTS.js"></script>
+</body>
+</html>

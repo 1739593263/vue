@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FOR</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--  1. normal  -->
+    <ul>
+      <li v-for="test in tests">{{test}}</li>
+    </ul>
+    <!--  2. normal with serial number -->
+    <ul>
+      <li v-for="(test, item) in tests">
+        {{item+1}}&nbsp;&nbsp;{{test}}
+      </li>
+    </ul>
+    <!--  3. v-for in object  -->
+    <!--  1. one index : just show value -->
+    <ul>
+      <li v-for="object in objects">{{object}}</li>
+    </ul>
+    <!--  2. two indexes  -->
+    <ul>
+      <li v-for="(value,key) in objects">{{value}}&nbsp;&nbsp;{{key}}</li>
+    </ul>
+    <!--  3. three indexes  -->
+    <ul>
+      <li v-for="(value,key,item) in objects">{{value}}&nbsp;{{key}}&nbsp;{{item}}</li>
+    </ul>
+  </div>
+  <div id="app1">
+    <ul>
+      <!-- the 'item' in the :key must corresponding the item in the {{item}} -->
+      <li v-for="item in items" :key="item">{{item}}</li>
+    </ul>
+  </div>
+  <script src="../js/v_for.js"></script>
+
+</body>
+</html>

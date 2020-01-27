@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/vue.js"></script>
+    <title>vue</title>
+</head>
+<body>
+    <div id="app">
+        <span>{{message}}</span><br>
+        <span v-pre>{{message}}</span><br>
+        <i>{{i_tag}}</i>
+        <br><br>
+        <textarea cols="30" rows="10" readonly>{{info}}</textarea>
+        <textarea cols="30" rows="10" v-model="info"></textarea>
+        <p><b>{{reverse}}</b></p>
+        <button v-on:click="reverseMessage">Let's reverse</button>
+    </div>
+
+    <div id="list">
+        <ol>
+            <li v-for="text in texts">{{ text }}</li>
+        </ol>
+    </div>
+
+    <div id="calculate">
+        <b>current number:{{num}}</b>
+        <button v-on:click="plus">+</button>
+        <button v-on:click="minus">-</button>
+    </div>
+    <script src="../js/initiate.js"></script>
+</body>
+</html>

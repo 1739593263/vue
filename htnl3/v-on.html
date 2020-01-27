@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>V_on</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="On">
+    <h2>{{count}}</h2>
+    <br>
+    <!-- normal structure -->
+<!--    <button v-on:click="increment">+</button>&nbsp;<button v-on:click="decrement">-</button>-->
+    <!-- 糖豆表达式 -->
+    <button @click="increment">+</button>&nbsp;<button @click="decrement">-</button>
+  </div>
+
+  <div id="event">
+    <button @click="btn1(123)">btn1</button>
+    <button @click="btn2">btn2</button>
+    <button @click="btn3('123hhh',$event)">btn3</button>
+  </div>
+  <script src="../js/v_on.js"></script>
+</body>
+</html>

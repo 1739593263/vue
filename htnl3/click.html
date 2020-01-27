@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="click">
+    <!-- .stop : avoid bubble reaction -> click button as click div  -->
+    <div @click="divClick">
+      div
+      <button @click.stop="btnClick">btn</button>
+    </div>
+
+    <!--  .prevent : stop redirect of web page  -->
+    <form action="bilibili">
+      <input type="submit" value="submit" @click.prevent="SBbutton"/>
+    </form>
+
+    <!--  monitor the keyboard  -->
+    <textarea id="tt" cols="30" rows="10" @keyup.enter="keyup"></textarea>
+    <input type="text"@keyup="keyup1"/>
+
+    <br>
+    <!--  .once : trigger once recall  -->
+    <button @click.once="one">ONCE</button>
+  </div>
+
+
+  <script src="../js/click.js"></script>
+</body>
+</html>
