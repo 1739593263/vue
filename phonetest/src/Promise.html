@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  // Promise function use to separate receive and execute: block in Promise receive internet info(like execute .ajax), and then function follow execute.
+  // resolve and reject both are index and function
+  // if Promise invoke reject, it's mean that html fail to receive info, and browser will execute catch function nor will then function.
+  new Promise((resolve, reject) => {
+    // resolve("success internet info  No.1");
+
+    reject("error Message");
+  }).then((data) => {
+    console.log(data);
+    console.log(data);
+    console.log(data);
+    console.log(data);
+    console.log(data);
+
+    return new Promise((resolve, reject) => {
+      resolve("success internet info  No.2")
+    }).then((data) => {
+      console.log(data);
+      console.log(data);
+      console.log(data);
+      console.log(data);
+      console.log(data);
+
+      return new Promise((resolve, reject) => {
+        resolve("success internet info  No.3")
+      }).then((data) => {
+        console.log(data);
+        console.log(data);
+        console.log(data);
+        console.log(data);
+        console.log(data);
+      })
+    })
+  }).catch((err) => {
+    console.log(err);
+  }),
+
+  // Promise also can execute fulfill error printing without catch
+  // then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null):
+      // the code in last row is part of origin code of then function. It's easy to see then can include two index: the first is for fulfill(onfulfilled), and the second is for reject(onrejected)
+  new Promise((resolve, reject) => {
+    // resolve("success");
+    reject("failure");
+  }).then((data) => {
+    console.log(data);
+  }, (err) => {
+    console.log(err);
+  });
+
+  new Promise((resolve, reject) => {
+    resolve("execute10");
+  }).then((data) => {
+    console.log(data);
+
+    return new Promise(((resolve, reject) => {
+      resolve("execute20");
+    }))
+  }).then((data) => {
+    console.log(data);
+
+    return Promise.resolve("execute30");
+  }).then((data) => {
+    console.log(data);
+  })
+
+  // judge access after two requirements success
+  Promise.all([
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("success * 1");
+        })
+      }),
+
+      new Promise(((resolve, reject) => {
+        setTimeout(() => {
+          resolve("success * 2");
+        })
+      }))
+  ]).then(results => {
+    console.log(results);
+  })
+</script>
+</html>
